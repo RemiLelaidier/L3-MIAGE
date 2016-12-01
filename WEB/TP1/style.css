@@ -1,0 +1,186 @@
+a{
+    text-decoration: none;
+}
+/*Choisir d'espacer les bords (cadres) des cellules du tableau (<table>).*/
+table{
+    border-collapse: separate;
+}
+
+/*Placez le titre (la légende) du tableau en bas, mettez-le en gras. */
+caption{
+    caption-side: bottom;
+    font-weight: bold;
+}
+
+/*Toutes les cellules (cases) sont encadrées par un trait bleu fin et continu. Leur alignement vertical est au milieu
+(le texte est centré en hauteur), leur hauteur est fixée à 2.4em (cela correspond à deux lignes)*/
+th, td{
+    border: 1px solid blue;
+    vertical-align: middle;
+    text-align: center;
+    height: 2.4em;
+}
+
+/*Les cellules de titre (th) du corps du tableau (tbody) de la première colonne doivent avoir un alignement vertical
+haut (le texte est en haut de la cellule).*/
+tbody th{
+    vertical-align: top;
+}
+
+/*Les cellules de données (td) ont un texte centré horizontalement et une largeur minimale de 10em.*/
+td{
+    min-width: 10em;
+    text-align: center;
+}
+
+/*Toutes les cellules vides ne sont pas encadrées.*/
+th:empty, td:empty{
+    border: none;
+}
+
+/* les cellules de données vides sont encadrées uniquement à droite, en bas et à gauche par des tirets fin et noirs.*/
+td:empty{
+    border: 1px dashed black;
+    border-top: none;
+}
+
+/*les cellules de données vides de la première ligne du corps du tableau ont aussi le même type de trait pour les
+encadrer en haut, mais pas de traits sur leur gauche.*/
+tbody tr:nth-child(1) td:empty{
+    border: 1px dashed black;
+    border-left: none;
+}
+
+/*la première cellule de données vide de la première ligne du corps du tableau est aussi encadrée sur sa gauche.*/
+tbody tr:nth-child(1) td:nth-child(2):empty{
+    border-left: 1px dashed black;
+}
+
+/*Toutes les cellules de titres non vides ont la mise en forme suivante :
+Des bords arrondis à 0.5em ;
+Une couleur de fond définie par les valeurs : rouge = 79, vert = 129, bleu = 189 ;
+Une couleur d'écriture blanche ;
+Un encadrement qui ressort (outset), de 2 pixels d'épaisseur et de couleur définie par les valeurs : rouge = 59, vert = 97, bleu = 142 ;
+Une ombre noire, décalée d'un pixel vers la droite et d'un pixel vers le bas.*/
+th:not(empty){
+    border-radius: 0.5em;
+    background-color: rgb(79, 129, 189);
+    color: #fff;
+    border: 2px outset rgb(59, 97, 142);
+    box-shadow: 1px 1px black;
+}
+
+th:empty{
+    border-radius: inherit;
+    background-color: inherit;
+    border: inherit;
+    box-shadow: inherit;
+}
+
+/*Pour la cellule contenant Doctorat / ED-STIC il faut :
+des bords arrondis à 0.5em ;
+Un encadrement qui ressort (outset), de 2 pixels d'épaisseur et de couleur définie par les valeurs : rouge = 94, vert = 73, bleu = 121 ;
+Une couleur de fond définie par les valeurs : rouge = 128, vert = 100, bleu = 162 ;
+Une ombre noire, décalée d'un pixel vers la droite et d'un pixel vers le bas
+Une couleur d'écriture blanche. Il s'agit de la seule cellule non vide de la deuxième ligne du corps du tableau*/
+tbody tr:nth-child(2) td:nth-child(3){
+    border-radius: 0.5em;
+    border: 2px outset rgb(94, 73, 121);
+    background-color: rgb(128, 100, 162);
+    box-shadow: 1px 1px black;
+}
+
+tbody tr:nth-child(2) td:not(:empty) a{
+    color: #fff;
+}
+
+/*Pour les cellules correspondant aux formations à BAC+5, il faut :
+Des bords arrondis à 0.5em ;
+Un encadrement qui ressort (outset), de 2 pixels d'épaisseur et de couleur définie par les valeurs : rouge = 147, vert = 178, bleu = 84;
+Une couleur de fond définie par les valeurs : rouge = 155, vert = 187, bleu = 89 ;
+Une ombre noire, décalée d'un pixel vers la droite et d'un pixel vers le bas ;
+Une couleur d'écriture blanche. Il s'agit des cellules non vides de la cinquième ligne du corps du tableau.*/
+tbody tr:nth-child(6) td:not(:empty){
+    border-radius: 0.5em;
+    border: 2px outset rgb(147, 178, 84);
+    background-color: rgb(155, 187, 89);
+    box-shadow: 1px 1px black;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(6) td:not(:empty) a{
+    color: #ffffff;
+}
+
+/*Pour les cellules correspondant aux formations à BAC+3 ou moins, il faut :
+Des bords arrondis à 0.5em ;
+Un encadrement qui ressort (outset), de 2 pixels d'épaisseur et de couleur définie par les valeurs : rouge = 59, vert = 97, bleu = 142 ;
+Une couleur de fond définie par les valeurs : rouge = 59, vert = 129, bleu = 189 ;
+Une ombre noire, décalée d'un pixel vers la droite et d'un pixel vers le bas ;
+Une couleur d'écriture blanche : il s'agit des cellules non vides à partir de la septième ligne du corps du tableau.*/
+tbody tr:nth-child(10) td:not(:empty){
+    border-radius: 0.5em;
+    border: 2px outset rgb(59, 97, 142);
+    background-color: rgb(59, 129, 189);
+    box-shadow: 1px 1px black;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(10) td:not(:empty) a{
+    color: #ffffff;
+}
+
+tbody tr:nth-child(11) td:not(:empty){
+    border-radius: 0.5em;
+    border: 2px outset rgb(59, 97, 142);
+    background-color: rgb(59, 129, 189);
+    box-shadow: 1px 1px black;
+    color: #ffffff;
+}
+
+/*Rendez la case DU IG transparente à 50% (0.5). Pour cela, créez une classe CSS et modifier légèrement le code html de la page pour utiliser cette classe.*/
+.opacite{
+    opacity: 0.5;
+}
+
+
+/*Fusion de parcours MIAGE et licence info TODO*/
+tbody tr:nth-child(10) td:nth-child(4)::before{
+        content: " ";
+    position: absolute;
+    background-color: rgb(59, 129, 189);
+    height: 41px;
+    width: 14px;
+    top: 408px;
+    left: 397px;
+}
+
+/*Anime une etoile*/
+tbody tr:nth-child(10) td:nth-child(3)::after{
+    content: url(etoile.png);
+    position: absolute;
+    animation: etoile 5s infinite;
+}
+
+@keyframes etoile {
+    0%{
+        top: 378px;
+        left: 203px;
+    }
+    25%{
+        left: 203px;
+        top: 418px;
+    }
+    50%{
+        top: 418px;
+        left: 343px;
+    }
+    75%{
+        top: 378px;
+        left: 343px;
+    }
+    100%{
+        top: 378px;
+        left: 203px;
+    }
+}

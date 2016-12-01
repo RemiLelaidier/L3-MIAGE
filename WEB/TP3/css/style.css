@@ -1,0 +1,81 @@
+/*
+ Nav bar
+*/
+nav{
+    background-color: #008B8B;
+    border-radius: 10px;
+}
+
+nav ul{
+    margin: 0px 0px 0px 0px;
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li{
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px 1.5em 10px 1.5em;
+    border: 2px solid #808080;
+}
+
+nav ul li:hover{
+    background-color: #a9a9a9;
+}
+
+nav ul li a{
+    color: #000000;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+/*
+FIN nav bar
+*/
+
+/*
+Contenu
+*/
+.content{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content .categorie{
+    width: 48%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.content ul{
+    list-style: none;
+}
+
+.content ul li{
+    margin-top: 1em;
+}
+
+.content ul li legend{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: bold;
+}
+
+.content form label{
+    margin-top: 1em;
+}
+
+.content form input{
+    width: 100%;
+}
+
+.content form textarea{
+    width: 100%;
+    height: 350px;
+}
